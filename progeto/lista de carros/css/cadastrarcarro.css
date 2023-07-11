@@ -1,0 +1,111 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  form{
+    width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 0px #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  h1{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  input[type="text"], input[type="tel"], input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  input[type="text"], input[type="tel"], input[type="email"] :focus{
+
+    outline-color: #00c3ff;
+
+  }
+  
+select {
+  /* margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.2s;
+  width: 50%; */
+
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+select:focus {
+  box-shadow: 0 0 10px #333;
+}
+
+input[type="date"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.2s;
+  width: 50%;
+}
+
+input[type="date"]:focus {
+  box-shadow: 0 0 10px #333;
+}
+
+.btn-blue {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #333;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-blue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #333;
+}
+  
+  button[name="salvar"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  button[name="salvar"]:hover{
+    background-color: green;
+  }
+  

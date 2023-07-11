@@ -1,0 +1,238 @@
+<?php
+
+require_once('../class/config.php');
+require_once('../autoload.php');
+
+// $login = new Login();//instanciar login
+// $login->isAuth($_SESSION['TOKEN']);
+
+// echo "<h1>Bem-vindo $login->nome!<br>Email: $login->email";
+?>
+<?php
+//configuraçao geral
+$servidor="localhost";
+$usuario="root";
+$senha="";
+$banco="biblioteca3";
+
+//conexao
+$pdo = new PDO("mysql:host=$servidor;dbname=$banco",$usuario,$senha);
+
+   //funcao para limpar entrada de dados como espaços baras e caracteres especial
+   function limparEntrada($dado){
+    $dado=trim($dado);
+    $dado=stripslashes($dado);
+    $dado=htmlspecialchars($dado);
+    return $dado;
+
+   } 
+
+
+$login = new Login();
+// $login->isAuth($_SESSION['TOKEN']);
+
+// echo "<h1>Bem-vindo!<br>Email: $login->email";
+
+
+
+
+
+ 
+ ?>
+ 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biblioteca</title>
+    <link href="../css/listarRequisicao.css" rel="stylesheet">
+    <script src="jq/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    
+    <style>
+        table{
+            border-collapse: collapse;
+            width:100%;
+        }
+        th,td{
+            padding:10px;
+            text-align:center;
+            border:1px solid #ccc;
+        }
+        p{
+            padding:20px;
+            border:1px solid #ccc;
+        }
+    </style>   
+</head>
+</head>
+<body>
+ 
+
+  <header> 
+ 
+   
+  <h1>Obras cadastrados</h1> 
+
+          <form method="post" action="">
+      <input type="search" name="pesquisar" width="10">
+      <button type="submit" class="button" >Pesquisar</button>
+    </form>
+
+</header>
+  
+
+</body>
+</html>
+
+<?php
+
+
+
+//verifica se a pesquisa foi realizada e recebe o termo pesquisado
+if(isset($_POST['pesquisar'])){
+  $pesquisa = limparEntrada($_POST['pesquisar']);
+  if($pesquisa=="" || $pesquisa==null){
+   
+   
+}else{
+    
+    $query = $pdo->query("SELECT * FROM obra WHERE titulo LIKE '$pesquisa%'");
+    $resultados = $query->fetchAll(PDO::FETCH_ASSOC);
+  
+   
+    //VERIFICAR SE TEM DADOS (ARRAY DADOS MAIOR QUE ZERO)
+    if(count($resultados) > 0){
+    //CONSTROI PARTE DE CIMA DA TABELA
+    echo "<br><br><table>
+    <tr>
+       
+       
+       
+        <th>titulo</th>
+        <th>tipo obra</th>
+        <th>editora</th>
+        <th>exemplares</th>
+        <th>Autor</th>
+       
+      
+        <th>Codigo</th>
+        <th>Data Publicação</th>
+        <th>Data Cadastro</th>
+        
+        
+    </tr>";
+    
+    //LAÇO DE REPETIÇÃO PARA ADICIONAR LINHA
+    foreach($resultados as $chave => $valor){
+        echo " <tr>
+                    
+              
+                    <td>".$valor['titulo']."</td>
+                    <td>".$valor['tipoObra']."</td>
+                    <td>".$valor['editora']."</td>
+                    <td>".$valor['exemplares']."</td>
+                    <td>".$valor['nomeAutor']."</td>
+                  
+                    <td>".$valor['isbn']."</td>
+                    <td>".$valor['dataPublicacoa']."</td>
+                    <td>".$valor['dataC']."</td>
+                   <td> <button class='btn-blue' id='".$valor['idObra']."' type='submit' name='apagar'>Apagar</button></td>
+                   
+                   
+                                        
+           </tr>";
+          
+    
+    }
+  }else{
+     //CASO NÃO TENHA NENHUM DADO ADICIONADO
+  echo "<p>Nenhum obra pesquisado</p>";
+  }
+
+
+
+}
+
+ 
+    //FECHA TABELA
+  echo "</table>";
+     }else{
+ 
+        //SELECIONAR DADOS DA TABELA obra
+        $sql = $pdo->prepare("SELECT * FROM obra");
+        $sql->execute();
+        $dados = $sql->fetchAll();
+        
+
+        //EXEMPLO COM FILTRAGEM
+        /*
+         $sql = $pdo->prepare("SELECT * FROM clientes WHERE email = ?");
+         $email = 'teste2@gmail.com';
+         $sql->execute(array($email));
+         $dados = $sql->fetchAll();
+        */
+        
+        /*
+        echo "<pre>";
+        print_r($dados);
+        echo "</pre>";
+        */
+
+         //VERIFICAR SE TEM DADOS (ARRAY DADOS MAIOR QUE ZERO)
+    if(count($dados) > 0){
+        //CONSTROI PARTE DE CIMA DA TABELA
+        echo "<br><br><table>
+        <tr>
+           
+           
+           
+            <th>titulo</th>
+            <th>tipo obra</th>
+            <th>editora</th>
+            <th>exemplares</th>
+            <th>Autor</th>
+           
+          
+            <th>Codigo</th>
+            <th>Data Publicação</th>
+            <th>Data Cadastro</th>
+        
+            
+        </tr>";
+
+        //LAÇO DE REPETIÇÃO PARA ADICIONAR LINHA
+        foreach($dados as $chave => $valor){
+            echo " <tr>
+                        
+                  
+                        <td>".$valor['titulo']."</td>
+                        <td>".$valor['tipoObra']."</td>
+                        <td>".$valor['editora']."</td>
+                        <td>".$valor['exemplares']."</td>
+                        <td>".$valor['nomeAutor']."</td>
+                      
+                        <td>".$valor['isbn']."</td>
+                        <td>".$valor['dataPublicacoa']."</td>
+                        <td>".$valor['dataC']."</td>
+                        <td><button class='btn-blue' onclick='apagar(this)' id='apagar' obra_id=".$valor['idObra']." name='apagar'>Apagar</button></td>
+                   
+                          
+               </tr>";
+        }
+     
+        //FECHA TABELA
+        echo "</table>";
+    }else{
+        //CASO NÃO TENHA NENHUM DADO ADICIONADO
+        echo "<p>Nenhum obra cadastrado</p>";
+    }
+  }
+  
+   
+
+
+
+    ?>

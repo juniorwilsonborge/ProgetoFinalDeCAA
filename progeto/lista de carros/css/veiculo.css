@@ -1,0 +1,116 @@
+form {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-align: center; 
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="number"]:focus {
+
+    outline-color: #00c3ff;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #003366;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+   /* Estilo para o botão */
+   .button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+select {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.2s;
+  width: 50%;
+}
+
+select:focus {
+  box-shadow: 0 0 10px #333;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.2s;
+  width: 50%;
+}
+
+input[type="date"]:focus {
+  box-shadow: 0 0 10px #333;
+}
+
+.btn-blue {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #333;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-blue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #333;
+}
+  /* Animação para o botão quando o mouse estiver sobre ele */
+  .button:hover {
+    cursor: pointer;
+    background-color: green;
+    transform: scale(1.1);
+  }
+  
+  /* Transição de cor quando o botão é clicado */
+  .button:active {
+    background-color: blue;
+  }
