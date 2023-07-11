@@ -8,7 +8,7 @@ Elaborado por Wilson Borges
 Este é um projeto de um sistema de controle de cesto de carro desenvolvido em HTML, CSS, JavaScript e PHP. O objetivo do sistema é melhorar a organização e controle das entradas e saídas de carros em uma fila no terminal de Assomada, visando acabar com turbulências e outros constrangimentos, como o registro manual em papel.
 
 
-# Funcionalidades
+## Funcionalidades ##
 O sistema possui as seguintes funcionalidades:
 - ** Cadastro de funcionários**: permite que os funcionários se cadastrem no sistema
  
