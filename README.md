@@ -10,16 +10,16 @@ Este é um projeto de um sistema de controle de cesto de carro desenvolvido em H
 
 # Funcionalidades
 O sistema possui as seguintes funcionalidades:
-- **Cadastro de funcionários**: permite que os funcionários se cadastrem no sistema
+- ** Cadastro de funcionários**: permite que os funcionários se cadastrem no sistema
  
-- **Login e autenticação:** os funcionários podem fazer login no sistema com suas credenciais.
+- ** Login e autenticação:** os funcionários podem fazer login no sistema com suas credenciais.
 
 
-- **Cadastro de veículos:** os funcionários podem cadastrar veículos, informando dados como modelo, placa e número de passageiros.
-- **Cadastro de condutores:** os funcionários podem cadastrar condutores, informando dados como nome, CPF e número de telefone.
-- **Adição de veículos na fila:** os funcionários podem adicionar veículos à fila de carros, garantindo uma organização adequada.
-- **Remoção de veículos da fila:** os funcionários podem remover veículos da fila, levando em consideração o número máximo de carros permitidos na fila.
-- **Estatísticas:** o sistema gera estatísticas sobre a fila de carros, informando a quantidade de carros na fila, quantos já saíram e entraram, e o número de passageiros em cada carro.
+- ** Cadastro de veículos:** os funcionários podem cadastrar veículos, informando dados como modelo, placa e número de passageiros.
+- ** Cadastro de condutores:** os funcionários podem cadastrar condutores, informando dados como nome, CPF e número de telefone.
+- ** Adição de veículos na fila:** os funcionários podem adicionar veículos à fila de carros, garantindo uma organização adequada.
+- ** Remoção de veículos da fila:** os funcionários podem remover veículos da fila, levando em consideração o número máximo de carros permitidos na fila.
+- ** Estatísticas:** o sistema gera estatísticas sobre a fila de carros, informando a quantidade de carros na fila, quantos já saíram e entraram, e o número de passageiros em cada carro.
 
 ## Estrutura de Dados ##
 Para melhorar a organização da fila de carros, o sistema utiliza uma estrutura de dados chamada fila. Uma fila é uma estrutura de dados do tipo FIFO (First-In, First-Out), onde o primeiro elemento a entrar é o primeiro a sair. Essa estrutura permite uma organização eficiente da fila de carros, garantindo que a ordem de entrada e saída seja respeitada.
