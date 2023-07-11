@@ -16,10 +16,18 @@ O sistema possui as seguintes funcionalidades:
 ![login](https://github.com/juniorwilsonborge/ProgetoFinalDeCAA/blob/main/login.png)
 
 - ** Cadastro de veículos:** os funcionários podem cadastrar veículos, informando dados como modelo, placa e número de passageiros.
+
+ ![pagina fazer filas]([https://github.com/juniorwilsonborge/ProgetoFinalDeCAA/blob/main/index.png](https://github.com/juniorwilsonborge/ProgetoFinalDeCAA/blob/main/estacionamento.png))
 - ** Cadastro de condutores:** os funcionários podem cadastrar condutores, informando dados como nome, CPF e número de telefone.
 - ** Adição de veículos na fila:** os funcionários podem adicionar veículos à fila de carros, garantindo uma organização adequada.
 - ** Remoção de veículos da fila:** os funcionários podem remover veículos da fila, levando em consideração o número máximo de carros permitidos na fila.
 - ** Estatísticas:** o sistema gera estatísticas sobre a fila de carros, informando a quantidade de carros na fila, quantos já saíram e entraram, e o número de passageiros em cada carro.
+  ###pagina principal ###
+  ![pagina principal](https://github.com/juniorwilsonborge/ProgetoFinalDeCAA/blob/main/index.png)
+
+   ![pagina principal](https://github.com/juniorwilsonborge/ProgetoFinalDeCAA/blob/main/listaCarro.png)
+
+  
 
 ## Estrutura de Dados ##
 Para melhorar a organização da fila de carros, o sistema utiliza uma estrutura de dados chamada fila. Uma fila é uma estrutura de dados do tipo FIFO (First-In, First-Out), onde o primeiro elemento a entrar é o primeiro a sair. Essa estrutura permite uma organização eficiente da fila de carros, garantindo que a ordem de entrada e saída seja respeitada.
