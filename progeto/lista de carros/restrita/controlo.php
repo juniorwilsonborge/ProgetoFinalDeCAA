@@ -1,6 +1,6 @@
 <?php
 // Inclua a classe Fila e crie uma instância
-//require_once 'Fila.php';
+require_once 'Fila.php';
 require_once('../class/conf.php');
 require_once('../autoload.php');
 require_once('../class/DB.php');
@@ -211,15 +211,15 @@ $statu=limpaPost($_POST['statu']);
       $dados = $sql->fetchAll();
 
     $posicao=count($dados) + 1;
-  // //instanciar fila 
-  // $estacionamento = new Fila();
-  // //instanciar veiculo
-  // $veiculo = new Veiculo($matricula, $categoria);
+  //instanciar fila 
+  $estacionamento = new Fila();
+  //instanciar veiculo
+  $veiculo = new Veiculo($matricula, $categoria);
 
-  //   //txupetar veiculo na fila
-  // $estacionamento->enfileirar($veiculo);
-  // // Imprimir a fila
-  // $estacionamento->imprimirFila();
+    //txupetar veiculo na fila
+  $estacionamento->enfileirar($veiculo);
+  // Imprimir a fila
+  $estacionamento->imprimirFila();
 
 
 //     //VERIFICAR SE VALORES VINDOS DO POST NÃO ESTÃO VAZIOS
