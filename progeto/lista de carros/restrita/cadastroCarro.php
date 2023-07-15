@@ -129,12 +129,12 @@ if (isset($_POST['matricula']) && isset($_POST['categoria']) && isset($_POST['id
 
 
   // //instanciar fila 
-  // $estacionamento = new Fila();
+  $estacionamento = new Fila();
   // //instanciar veiculo
-  // $veiculo = new Veiculo($matricula, $categoria);
+  $veiculo = new Veiculo($matricula, $categoria);
 
   //   //txupetar veiculo na fila
-  // $estacionamento->enfileirar($veiculo);
+   $estacionamento->enfileirar($veiculo);
   // // Imprimir a fila
   // $estacionamento->imprimirFila();
 
