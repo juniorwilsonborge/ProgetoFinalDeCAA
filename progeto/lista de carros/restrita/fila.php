@@ -1,47 +1,46 @@
 <?php 
-class Fila {
-  private $fila;
+require_once 'no.php';
+class Queue {
+  private $primeiro;
+  private $ultimo;
 
   public function __construct() {
-    $this->fila = array();
+      $this->primeiro = null;
+      $this->ultimo = null;
   }
 
-  public function enfileirar($veiculo) {
-    $this->fila[] = $veiculo;
+  public function isEmpty() {
+      return $this->primeiro === null;
+  }
+
+  public function enfileirar($elemento) {
+      $novaNO = new Node($elemento);
+
+      if ($this->isEmpty()) {
+          $this->primeiro = $novaNO;
+          $this->ultimo = $novaNO;
+      } else {
+          $this->ultimo->next = $novaNO;
+          $this->ultimo = $novaNO;
+      }
   }
 
   public function desenfileirar() {
-    if ($this->estaVazia()) {
-      return null;
-    }
+      if ($this->isEmpty()) {
+          return null;
+      }
 
-    return array_shift($this->fila);
-  }
+      $removedNode = $this->primeiro;
+      $this->primeiro = $this->primeiro->next;
 
-  public function estaVazia() {
-    return empty($this->fila);
-  }
+      if ($this->primeiro === null) {
+          $this->ultimo = null;
+      }
 
-  public function tamanho() {
-    return count($this->fila);
-  }
-
-  public function primeiro() {
-    return $this->fila[0];
-  }
-
-  //emprime fila
-  public function imprimirFila() {
-    foreach ($this->fila as $veiculo) {
-      echo $veiculo . " ";
-    }
-    echo "\n";
+      return $removedNode->elemento;
   }
 }
 
-
-
-//clas veiculo
 
 class Veiculo {
     private $modelo;
