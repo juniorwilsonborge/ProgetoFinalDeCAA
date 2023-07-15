@@ -71,7 +71,7 @@ $estacionamento = new Fila();
 // Adicionar veículos à fila
 $veiculo1 = new Veiculo("Carro", "st-00-tf");
 $veiculo2 = new Veiculo("Moto", "st-01-to");
-$veiculo3 = new Veiculo("Caminhão", "st-91-ux");
+
 
 $estacionamento->enfileirar($veiculo1);
 $estacionamento->enfileirar($veiculo2);
