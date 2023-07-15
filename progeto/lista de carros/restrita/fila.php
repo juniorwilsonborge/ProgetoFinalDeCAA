@@ -1,6 +1,6 @@
 <?php 
 require_once 'no.php';
-class Queue {
+class Fila {
   private $primeiro;
   private $ultimo;
 
